@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity,Image } from 'react-native'
 import React from 'react'
 
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react';
 import {  onAuthStateChanged } from 'firebase/auth';
 import { FIREBASE_AUTH, FIRESTORE_DB} from '../firebaseConfig';
 import { useNavigation } from '@react-navigation/native';
-
 
 
 
@@ -62,6 +61,7 @@ const Profile = () => {
         <TouchableOpacity 
             style = {styles.picture} 
             onPress = {() => {
+
         }}>
             <FontAwesome5 name="user-alt" size={40} color="black" />
         </TouchableOpacity>
@@ -74,8 +74,10 @@ const Profile = () => {
     <View style = {styles.details}>
       {/* <Text style = {styles.detailText}>Contribution : 10</Text> */}
       {/* <Text style = {styles.detailText}> Done</Text> */}
-      <Text style = {styles.detailText}>Bio : Ethiopia, 23</Text>
-      <Text style = {styles.detailText}>Acadamic Status : Student</Text>
+      {/* <Text style = {styles.detailText}>Bio : Ethiopia, 23</Text>
+      <Text style = {styles.detailText}>Acadamic Status : Student</Text> */}
+      <Image source={require("../assets/loading.png")} />
+
       <TouchableOpacity 
         style = {{display : 'flex', flexDirection : 'row',gap : 10,backgroundColor : 'black',borderWidth : 1, padding : 10,width : 150, display : 'flex', alignItems : 'center', borderRadius : 20 }}
         onPress = {() => {
@@ -128,6 +130,8 @@ const styles = StyleSheet.create({
     },
     details : {
         display : 'flex',
+        justifyContent : 'center',
+        alignItems : 'center',
         gap : 30, 
         paddingVertical : 40,
         paddingHorizontal : 20,

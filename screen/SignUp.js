@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity ,StyleSheet} from 'react-native';
+import { View,Image, Text, TextInput, TouchableOpacity ,StyleSheet, Alert, ScrollView} from 'react-native';
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {doc, setDoc } from 'firebase/firestore';
@@ -61,33 +61,31 @@ const SignUp = () => {
           const userData = {
             email: email,
             password : password,
-            bio: bio,
-            quizzesCompleted: 0, // Set the initial number of quizzes completed to 0
+            // bio: bio,
+            // quizzesCompleted: 0, // Set the initial number of quizzes completed to 0
           };
 
           setDoc(userDocRef, userData)
             .then(() => {
-            //   console.log('User data saved to Firestore');
-              // You can perform additional actions here or navigate to another screen
+            Alert.alert("Successfully Registered")
             })
             .catch((error) => {
-              console.log('Error saving user data:', error);
-              // Handle the error or display an error message to the user
+              Alert.alert("Error Saving Data")
             });
         })
         .catch((error) => {
-          // Error occurred during user creation
-        //   const errorCode = error.code;
-        //   const errorMessage = error.message;
-        //   console.log('Error creating user:', errorCode, errorMessage);
-          // Handle the error or display an error message to the user
+          Alert.alert("Error Creating a User")
         });
     }
   };
 
   return (
+    <ScrollView style = {{backgroundColor : "#7077A1"}}>
     <View style = {styles.container}>
-      
+      <Image
+        source={require('../assets/ready.png')}
+        style={styles.picture}
+      />
       <View>
         <TextInput
           style = {styles.textIn}  
@@ -114,6 +112,7 @@ const SignUp = () => {
         </TouchableOpacity>
       </View>
     </View>
+    </ScrollView>
   );
 };
 

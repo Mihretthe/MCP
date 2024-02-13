@@ -8,6 +8,9 @@ import { FIRESTORE_DB } from '../firebaseConfig';
 const Question = ({question}) => {
 
     const [checked, setChecked] = useState('')
+    const [disable, setDisable] = useState(false)
+    const [isCorrect, setCorrect] = useState(false)
+    const [isInCorrect, setInCorrect] = useState(false)
     const handleChange = (value) => {
         setChecked(value)
 
@@ -20,10 +23,10 @@ const Question = ({question}) => {
   // }
 
     
-    return <View style = {styles.container}>
+    return <View style = {[styles.container, {  backgroundColor : isCorrect ? 'green' : isInCorrect ? 'red' : 'none'}]}>
         <Text 
           style = {styles.question}>{question.question}</Text>
-        <RadioButton.Group onValueChange={handleChange} value = {checked}>
+        <RadioButton.Group onValueChange={handleChange} value = {checked} >
         {question.choices.map((choice, index) => (
             <RadioButton.Item  
                 key = {index}
@@ -32,6 +35,7 @@ const Question = ({question}) => {
                 labelStyle = {{color : 'white'}}
                 value = {index} 
                 status={checked === index ? 'checked' : 'unchecked'}
+                disabled = {disable}
             />
         ))}
         </RadioButton.Group>
@@ -39,12 +43,14 @@ const Question = ({question}) => {
         <TouchableOpacity 
             style = {styles.button}
             onPress = {() => {
+              setDisable(true);
                 if (Number(question.answer) === (parseInt(checked) + 1)){
-                    Alert.alert("Correct")
-                    // addQ()
+                    // Alert.alert("Correct")
+                    setCorrect(true)
                 }else{
                   console.log(question.answer)
-                    Alert.alert("Incorrect")
+                    setInCorrect(true)
+                    // Alert.alert("Incorrect")
                 }
             }}
         >
@@ -60,7 +66,9 @@ export default Question
 const styles = StyleSheet.create({
     container : { 
       paddingVertical : 10, 
-      margin: 20}
+      margin: 20
+      
+    }
     ,
     question :{ 
       fontSize : 24,

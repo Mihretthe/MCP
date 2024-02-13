@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, TextInput, StyleSheet, TouchableOpacity, Alert} from 'react-native'
+import {View, Text, ScrollView,ImageBackground, TextInput,Image, StyleSheet, TouchableOpacity, Alert} from 'react-native'
 import { useState, useEffect } from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { addDoc, collection } from 'firebase/firestore';
@@ -89,14 +89,23 @@ const AddQuestion = () => {
         })
     }
 
-    return <ScrollView style = {{backgroundColor : '#7077A1'}}>
+    return <ScrollView style = {{backgroundColor : "#7077A1"}}>
+
         <View style = {{
             flex : 1,
             // padding : 10,
             // margin : 30,
             padding : 20,
+            backgroundColor : "#7077A1",
             
         }}>
+            {/* <ImageBackground
+                source={require('../assets/back.png')}
+                style={{
+                    // flex: 1,
+                    resizeMode: 'cover',
+                    justifyContent: 'center',}}
+         > */}
         <Text style = {styles.text}>Enter the question </Text>
         <TextInput 
             style = {styles.textInput} 
@@ -154,8 +163,9 @@ const AddQuestion = () => {
             <FontAwesome name="hand-o-up" size={24} color="white" />
             </View>
             }
-        
+        {/* </ImageBackground> */}
     </View>
+    
     </ScrollView>
 }
 

@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity,StyleSheet } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity,StyleSheet, ScrollView, Alert } from 'react-native';
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { FIREBASE_AUTH } from '../firebaseConfig';
@@ -29,16 +29,22 @@ const Login = () => {
         // You can perform additional actions here or navigate to another screen
       })
       .catch((error) => {
-        // Error occurred during login
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log('Error logging in:', errorCode, errorMessage);
-        // Handle the error or display an error message to the user
+        // // Error occurred during login
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
+        // console.log('Error logging in:', errorCode, errorMessage);
+        // // Handle the error or display an error message to the user
+        Alert.alert("Invalid login")
       });
   };
 
   return (
+    <ScrollView style = {styles.container}>
     <View style = {styles.container}>
+      <Image
+        source={require('../assets/ready.png')}
+        style={styles.picture}
+      />
       
       <TextInput
           style = {styles.textIn}  
@@ -51,10 +57,10 @@ const Login = () => {
           onChangeText={(text) => handlePassword(text)}
         />
         <TouchableOpacity style = {{margin : 10, padding : 10,width : 150, display : 'flex', alignItems : 'center', borderRadius : 2, backgroundColor : '#DCF2F2'}} onPress={() => handleSubmit()}>
-          <Text style = {styles.text}>Register</Text>
+          <Text style = {styles.text}>Login</Text>
         </TouchableOpacity>
       
-    </View>
+    </View></ScrollView>
   );
 };
 
