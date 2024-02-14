@@ -1,8 +1,6 @@
 import {View, Text, TouchableOpacity, StyleSheet, Alert} from 'react-native'
 import { useState } from 'react'
 import { RadioButton } from 'react-native-paper'
-import { addDoc, collection } from 'firebase/firestore';
-import { FIRESTORE_DB } from '../firebaseConfig';
 
 
 const Question = ({question}) => {
@@ -23,7 +21,7 @@ const Question = ({question}) => {
   // }
 
     
-    return <View style = {[styles.container, {  backgroundColor : isCorrect ? 'green' : isInCorrect ? 'red' : 'none'}]}>
+    return <View style = {[styles.container, {borderWidth : isCorrect ? 2 : isInCorrect ? 2 : 0,  borderColor : isCorrect ? 'lightgreen' : isInCorrect ? 'red' : 'none'}]}>
         <Text 
           style = {styles.question}>{question.question}</Text>
         <RadioButton.Group onValueChange={handleChange} value = {checked} >

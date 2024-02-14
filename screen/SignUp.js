@@ -74,7 +74,7 @@ const SignUp = () => {
             });
         })
         .catch((error) => {
-          Alert.alert("Error Creating a User")
+          // Alert.alert("Error Creating a User")
         });
     }
   };
