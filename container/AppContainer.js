@@ -16,6 +16,7 @@ import AddQuestion from '../screen/AddQuestion';
 
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import ScoreBoard from '../screen/ScoreBoard';
 
 const Tab = createBottomTabNavigator();
 
@@ -68,6 +69,22 @@ const AppContainer = () => {
                     // headerShown: false,
             }}
             />
+            <Tab.Screen name = "Score Board" component={ScoreBoard} 
+                options={{                        
+                    // tabBarShowLabel: false,
+                    tabBarIcon: ({ focused }) => focused ?<Feather name="star" size={24} color="gold" />  : <Feather name="star" size={24} color="gray" />,
+                    animation: "slide_from_left", headerBackVisible: false, headerStyle: {
+                        backgroundColor: '#1F2544',
+                    },
+                    headerTitleStyle: {
+                        color: 'white',
+                        fontSize: 20,
+                        fontWeight: '200',
+                    },
+                    // headerShown: false,
+            }}
+            />
+
             {/* <Tab.Screen name = "Settings" component={Settings} 
                     options={{                        
                         // tabBarShowLabel: false,
