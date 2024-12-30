@@ -37,7 +37,7 @@ const Feed = () => {
 
   return ( 
     <ScrollView>
-    <View style = {{backgroundColor : '#7077A1'}}>
+    <View style = {{backgroundColor : 'white'}}>
         {/* <Text>Questions</Text> */}
       {
         questions.map((question) => {
