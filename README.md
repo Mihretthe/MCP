@@ -1,3 +1,4 @@
+
 # Quiz App
 
 ## Overview
@@ -73,6 +74,16 @@ MCP/
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## Group Members
+| Name                  | ID No         |
+|-----------------------|---------------|
+| Lulit Ayele           | ETS0781/13    |
+| Meheret Alemu        | ETS0813/13    |
+| Metasebia Fetene     | ETS0849/13    |
+| Mihret Tekalgn       | ETS0876/13    |
+| Milky Siraj          | ETS0895/13    |
+
 
 ---
 
