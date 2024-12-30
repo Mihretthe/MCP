@@ -54,10 +54,10 @@ const AppContainer = () => {
                     // headerShown: false,
             }}
             />
-            <Tab.Screen name = "Profile" component={Profile} 
+            <Tab.Screen name = "Score Board" component={ScoreBoard} 
                 options={{                        
                     // tabBarShowLabel: false,
-                    tabBarIcon: ({ focused }) => focused ?<Feather name="user" size={24} color="blue" />  : <Feather name="user" size={24} color="gray" />,
+                    tabBarIcon: ({ focused }) => focused ?<Feather name="star" size={24} color="gold" />  : <Feather name="star" size={24} color="gray" />,
                     animation: "slide_from_left", headerBackVisible: false, headerStyle: {
                         backgroundColor: '#1F2544',
                     },
@@ -69,10 +69,10 @@ const AppContainer = () => {
                     // headerShown: false,
             }}
             />
-            <Tab.Screen name = "Score Board" component={ScoreBoard} 
+            <Tab.Screen name = "Profile" component={Profile} 
                 options={{                        
                     // tabBarShowLabel: false,
-                    tabBarIcon: ({ focused }) => focused ?<Feather name="star" size={24} color="gold" />  : <Feather name="star" size={24} color="gray" />,
+                    tabBarIcon: ({ focused }) => focused ?<Feather name="user" size={24} color="blue" />  : <Feather name="user" size={24} color="gray" />,
                     animation: "slide_from_left", headerBackVisible: false, headerStyle: {
                         backgroundColor: '#1F2544',
                     },

@@ -8,11 +8,11 @@ import AppContainer from './container/AppContainer';
 // import Login from './screen/Login';
 import SignContainer from './container/SignContainer';
 import ScoreBoard from './screen/ScoreBoard';
+
 const Stack = createStackNavigator()
 export default function App() {
   return (
-    // <ScoreBoard />
-  
+  //  <ScoreBoard />
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name = 'Sign Up' component={SignContainer} options = {{

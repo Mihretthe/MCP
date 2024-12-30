@@ -89,14 +89,14 @@ const AddQuestion = () => {
         })
     }
 
-    return <ScrollView style = {{backgroundColor : "#7077A1"}}>
+    return <ScrollView style = {{backgroundColor : "white"}}>
 
         <View style = {{
             flex : 1,
             // padding : 10,
             // margin : 30,
             padding : 20,
-            backgroundColor : "#7077A1",
+            backgroundColor : "white",
             
         }}>
             {/* <ImageBackground
@@ -123,7 +123,19 @@ const AddQuestion = () => {
             
         />
         <TouchableOpacity 
-            style = {[styles.textInput, {width : 60, display : 'flex', alignItems : 'center'}]}
+           style={{
+            margin: 10,
+            padding: 10,
+            width: 150,
+            display: "flex",
+            alignItems: "center",
+            borderRadius: 2,
+            backgroundColor: "#DCF2F2",
+            shadowColor: "gray",
+            shadowRadius: 10,
+            borderRadius: 10,
+            alignSelf: "center",
+          }}
             onPress = {() => {question != "" && Number(num) > 1 ? setTrue(true):setTrue(false)}}
         >
             <Text>Yes</Text>
@@ -179,11 +191,11 @@ const styles = StyleSheet.create({
 
     },
     textInput : {
-        fontSize : 18,
-        backgroundColor : '#DCF2F1',
-        padding : 5,
-        marginVertical : 10,
-        borderRadius : 2
+        fontSize: 18,
+    backgroundColor: "#DCF2F2",
+    padding: 10,
+    margin: 10,
+    borderRadius: 10,
 
     },
     choices : {
